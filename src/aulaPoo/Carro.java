@@ -15,6 +15,8 @@ public class Carro {
     private String cor;
 
     private String combustivel;
+    
+    private float motor;
 
     public String getModelo() {
         return modelo;
@@ -56,6 +58,14 @@ public class Carro {
         this.combustivel = combustivel;
     }
 
+    public float getMotor() {
+        return motor;
+    }
+
+    public void setMotor(float motor) {
+        this.motor = motor;
+    }
+
     public void ligar() {
         System.out.println("Ligado");
     }
@@ -65,7 +75,7 @@ public class Carro {
     }
 
     public void acelerar() {
-        System.out.println("Acelerando");
+        System.out.println("Acelerando com o motor: " + motor);
     }
 
     public void parar() {

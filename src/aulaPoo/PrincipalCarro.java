@@ -15,6 +15,7 @@ public class PrincipalCarro {
         obj.setPlaca("QWE 1234");
         obj.setCor("Azul Royal");
         obj.setCombustivel("gasolina");
+        obj.setMotor(2.0f);
 
         obj.acelerar();
 
