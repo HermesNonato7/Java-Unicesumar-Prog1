@@ -15,8 +15,12 @@ public class Carro {
     private String cor;
 
     private String combustivel;
+
+    private String motor;
+
+    private boolean estaAcelerando = false;
     
-    private float motor;
+    // GETTER E SETTER - ENCAPSULAMENTOS
 
     public String getModelo() {
         return modelo;
@@ -58,12 +62,46 @@ public class Carro {
         this.combustivel = combustivel;
     }
 
-    public float getMotor() {
+    public String getMotor() {
         return motor;
     }
 
-    public void setMotor(float motor) {
+    public void setMotor(String motor) {
         this.motor = motor;
+    }
+
+    public boolean isEstaAcelerando() {
+        return estaAcelerando;
+    }
+
+    public void setEstaAcelerando(boolean estaAcelerando) {
+        this.estaAcelerando = estaAcelerando;
+    }
+
+    // Exemplo de ENCAPSULAMENTO de Métodos
+    public void acelerar() {
+        estaAcelerando = true;
+        if (motor == null) {
+            this.setMotor("Motor 1.0");
+        }
+        System.out.println("Acelerando com o motor: " + motor);
+    }
+
+    public void parar() {
+        this.ligarLuzFreio();
+        this.desacelerar();
+        System.out.println("Carro parado");
+    }
+
+    private void desacelerar() {
+        if (estaAcelerando == true) {
+            System.out.println("Desaceleranso...");
+        }
+        estaAcelerando = false;
+    }
+    
+    private void ligarLuzFreio(){
+        System.out.println("Ligando Luz de Freio");
     }
 
     public void ligar() {
@@ -72,14 +110,6 @@ public class Carro {
 
     public void desligar() {
         System.out.println("Desligado");
-    }
-
-    public void acelerar() {
-        System.out.println("Acelerando com o motor: " + motor);
-    }
-
-    public void parar() {
-        System.out.println("Parando");
     }
 
 }
