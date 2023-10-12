@@ -11,8 +11,9 @@ public class PrincipalCarro {
         Carro obj = new Carro();
 
         obj.setModelo("BMW X1");
-        obj.setPlaca("QWE 1234");
         obj.setQntPortas(4);
+        obj.setPlaca("QWE 1234"); 
+        obj.setMotor("Motor 1.5"); 
         
         obj.acelerar();
         obj.parar();

@@ -12,16 +12,26 @@ public class Carro {
 
     private String placa;
 
-    private String cor;
-
-    private String combustivel;
-
     private String motor;
 
-    private boolean estaAcelerando = false;
-    
-    // GETTER E SETTER - ENCAPSULAMENTOS
+    // Contrutor com Parâmetro
+    public Carro(String placa) {
+        this.setPlaca(placa);
+    }
 
+    public Carro(String placa, String motor) {
+        this.setMotor(motor);
+        this.setModelo(modelo);
+    }
+
+    public Carro() {
+        this.setPlaca("A definir");
+    }
+
+    private boolean estaAcelerando = false;
+
+    //
+    // GETTER E SETTER - ENCAPSULAMENTOS
     public String getModelo() {
         return modelo;
     }
@@ -44,22 +54,6 @@ public class Carro {
 
     public void setPlaca(String placa) {
         this.placa = placa;
-    }
-
-    public String getCor() {
-        return cor;
-    }
-
-    public void setCor(String cor) {
-        this.cor = cor;
-    }
-
-    public String getCombustivel() {
-        return combustivel;
-    }
-
-    public void setCombustivel(String combustivel) {
-        this.combustivel = combustivel;
     }
 
     public String getMotor() {
@@ -95,12 +89,12 @@ public class Carro {
 
     private void desacelerar() {
         if (estaAcelerando == true) {
-            System.out.println("Desaceleranso...");
+            System.out.println("Desacelerando...");
         }
         estaAcelerando = false;
     }
-    
-    private void ligarLuzFreio(){
+
+    private void ligarLuzFreio() {
         System.out.println("Ligando Luz de Freio");
     }
 
